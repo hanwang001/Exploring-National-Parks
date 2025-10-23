@@ -1,173 +1,167 @@
-.home-page{
-    background-image : url("../HomePage/Assets/yosemite.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.welcome{
-    /* margin-bottom: 20rem; */
-}
-.home-page .welcome-title{
-    margin: 0;
-    font-size: 10rem;
-}
-.home-page .welcome-text{
-    font-size: 1.5rem;
-    color:white;
-    background-color: rgba(0,0,0,0.5);
+/* ===== Home page background (keep hero image) ===== */
+.home-page {
+  background-image: url("../HomePage/Assets/yosemite.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.home-page .homepage-button-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content: space-evenly;
+/* ===== Welcome block ===== */
+.welcome { /* reserved for spacing if needed */ }
 
-}
-.home-page .homepage-button-wrapper .homepage-button{
-    font-size: 1.5rem;
-    height: 30%;
-    width: 100%;
-    margin: auto;
-    border-radius: 15px;
-}
-
-.home-page .homepage-button:hover {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.button-container{
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: space-evenly;
-    margin-bottom: 1rem;
-
-}
-.button-container p{
-    font-size: 1.5rem;
-    color:white
-}
-
-/* highlighted parks section styling  */
-.gallery{
-    max-width: 100%;
-    /* margin: 15.4rem auto; */
-    background-color: rgba(0,0,0,0.5);
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    padding-right: 2rem;
-}
-.gallery h1{
-    text-align: center;
-    font-size: 5rem;
-    color: white;
-}
-.slider{
-    width: 80%;
-    min-height:50vh;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-}
-.slider .slide{
-    padding: 1rem;
-    box-sizing: border-box;
-    min-height:50vh;
-    position:relative;
-}
-.slider img{
-    height: 50vh;
-}
-
-.slide h2{
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px black;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slider .slick-dots{
-    bottom: 13px;
-}
-.slider .slick-dots li button:before{
-    color: white;
-    font-size: 10px;
-    line-height: 50px;
-}
-.slider .slick-dots li.slick-active button:before{
-    color: #a67e46
-}
-/* .slider .slick-prev:before, .slider .slick-next:before {
-    color:#a67e46;
-} */
-
-.more-info{
-    position: absolute;
-    right: 30%;
-    bottom: 40%;
-    width: 40%;
-    border-radius: 15px;
-    display:none;
-    font-family: "Times New Roman", Times, serif;
-    font-size: larger;
-}
-
-.more-info:hover {
-    background: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* {
-    .more-info{
-        display:block;
-    }
-} */
-
-.slider .slick-slide:hover{
-    .more-info{
-        display:block;
-    }
-    .slide img{
-        filter:brightness(80%)blur(0.5px);
-    }
-}
-/* === Fix oversized headings with responsive caps === */
+/* Cap headline size so it doesn't get huge on large screens */
 .home-page .welcome-title {
-  /* min 32px, scales with viewport, max 68px */
+  /* min 32px, scale with viewport, max 68px */
   font-size: clamp(32px, 6vw, 68px) !important;
   line-height: 1.12;
   margin: 0 0 0.5em 0;
 }
 
-.gallery h1 {
-  /* min 24px, scales, max 48px */
-  font-size: clamp(24px, 4vw, 48px) !important;
-  line-height: 1.15;
+/* Body intro text: keep readable */
+.home-page .welcome-text {
+  font-size: clamp(14px, 2vw, 18px);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Keep left column content readable on wide screens */
+/* ===== Buttons on the hero ===== */
+.home-page .homepage-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home-page .homepage-button-wrapper .homepage-button {
+  font-size: 1.5rem;
+  height: 30%;
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.home-page .homepage-button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== Generic button container (used under hero) ===== */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.button-container p {
+  font-size: clamp(14px, 2vw, 18px);
+  color: white;
+}
+
+/* ===== Highlighted parks (gallery/slider) ===== */
+.gallery {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2rem;
+}
+
+/* Cap gallery heading size as well */
+.gallery h1 {
+  /* min 24px, scale, max 48px */
+  font-size: clamp(24px, 4vw, 48px) !important;
+  line-height: 1.15;
+  text-align: center;
+  color: white;
+}
+
+.slider {
+  width: 80%;
+  min-height: 50vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider .slide {
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 50vh;
+  position: relative;
+}
+
+.slider img {
+  height: 50vh;
+}
+
+.slide h2 {
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider .slick-dots {
+  bottom: 13px;
+}
+
+.slider .slick-dots li button:before {
+  color: white;
+  font-size: 10px;
+  line-height: 50px;
+}
+
+.slider .slick-dots li.slick-active button:before {
+  color: #a67e46;
+}
+
+/* ===== Overlay "more-info" button on slide ===== */
+.more-info {
+  position: absolute;
+  right: 30%;
+  bottom: 40%;
+  width: 40%;
+  border-radius: 15px;
+  display: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+}
+
+.more-info:hover {
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FIX: valid hover selectors (no nested blocks) */
+.slider .slick-slide:hover .more-info {
+  display: block;
+}
+
+.slider .slick-slide:hover img {
+  filter: brightness(80%) blur(0.5px);
+}
+
+/* ===== Readability guard for left column ===== */
+/* Add className="left-col" to the left column container in HomePage */
 .left-col {
   max-width: 900px;
   width: 100%;
 }
 
-/* Optional: body text scaling to avoid huge paragraphs */
-.home-page .welcome-text,
-.button-container p {
-  font-size: clamp(14px, 2vw, 18px);
-}
-
-/* Two–column grid: stack on small screens so the feed doesn't crush content */
+/* ===== Responsive: stack columns on narrow screens ===== */
+/* The grid container in HomePage uses inline style; we match it via attribute selector */
 @media (max-width: 900px) {
   .home-page.main-component > div[style*="grid"] {
     grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
 }
