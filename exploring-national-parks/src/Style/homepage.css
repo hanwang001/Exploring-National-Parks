@@ -139,3 +139,35 @@
         filter:brightness(80%)blur(0.5px);
     }
 }
+/* === Fix oversized headings with responsive caps === */
+.home-page .welcome-title {
+  /* min 32px, scales with viewport, max 68px */
+  font-size: clamp(32px, 6vw, 68px) !important;
+  line-height: 1.12;
+  margin: 0 0 0.5em 0;
+}
+
+.gallery h1 {
+  /* min 24px, scales, max 48px */
+  font-size: clamp(24px, 4vw, 48px) !important;
+  line-height: 1.15;
+}
+
+/* Keep left column content readable on wide screens */
+.left-col {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Optional: body text scaling to avoid huge paragraphs */
+.home-page .welcome-text,
+.button-container p {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+/* Two–column grid: stack on small screens so the feed doesn't crush content */
+@media (max-width: 900px) {
+  .home-page.main-component > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
