@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 export default function TempleFeed() {
   useEffect(() => {
-    // Ensure Twitter (X) widgets script is present, then trigger render
     const ensureTwitterScript = () =>
       new Promise((resolve) => {
         if (window.twttr?.widgets) return resolve();
@@ -22,15 +21,13 @@ export default function TempleFeed() {
       });
 
     ensureTwitterScript().then(() => {
-      try {
-        window.twttr.widgets.load();
-      } catch {}
+      try { window.twttr.widgets.load(); } catch {}
     });
   }, []);
 
   const card = {
     maxWidth: 600,
-    margin: "0 auto",
+    margin: "8px auto",            // <- was "0 auto"
     padding: "16px",
     borderRadius: "16px",
     background: "white",
@@ -43,7 +40,6 @@ export default function TempleFeed() {
         Temple Latest News / Alerts
       </h2>
 
-      {/* TUalert: show only the latest post */}
       <a
         className="twitter-timeline"
         data-chrome="noheader nofooter noborders noscrollbar"
@@ -57,7 +53,6 @@ export default function TempleFeed() {
 
       <div style={{ height: 12 }} />
 
-      {/* Temple University official: show only the latest post */}
       <a
         className="twitter-timeline"
         data-chrome="noheader nofooter noborders"
